@@ -65,6 +65,7 @@ data/raw/text/
 ├── Nazario_5 - Copy.csv
 ├── emails.csv
 ├── phishtank.csv
+├── Enron dataset(emails.csv)
 │
 └── SpamAssassin/
     ├── easy_ham/
