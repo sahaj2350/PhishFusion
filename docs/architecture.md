@@ -380,7 +380,7 @@ It is important to distinguish the architecture that was actually implemented fr
 Text
  └── BERT-CNN-LSTM
  └── DistilBERT-CNN-BiLSTM
- └── Metadata MLP
+ └── Auxiliary Metadata MLP
  └── Weighted soft-voting Text Ensemble
 
 Image
@@ -437,7 +437,7 @@ The current PhishFusion architecture can therefore be summarized as:
 TEXT
  ├── BERT → CNN → LSTM
  ├── DistilBERT → CNN → BiLSTM
- ├── Metadata MLP
+ ├── Auxiliary Metadata MLP
  └── Weighted Soft Voting
              |
              v
