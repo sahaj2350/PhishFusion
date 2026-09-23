@@ -1,0 +1,85 @@
+# PhishFusion - Metadata Modality
+# Documents the current metadata pipeline configuration.
+# The existing Python pipeline should remain the authoritative implementation
+# until YAML loading is explicitly added.
+
+modality: metadata
+
+data:
+  datasets:
+    - name: "Phishing Dataset Master"
+      files:
+        - "Phishing-Dataset-master/dataset_full.csv"
+        - "Phishing-Dataset-master/dataset_small.csv"
+
+    - name: "PhiUSIIL"
+      files:
+        - "phiusiil+phishing+url+dataset/PhiUSIIL_Phishing_URL_Dataset.csv"
+
+    - name: "Phishing Email"
+      files:
+        - "archive/phishing_email.csv"
+
+    - name: "Nigerian Fraud"
+      files:
+        - "archive/Nigerian_Fraud.csv"
+
+    - name: "SpamAssasin"
+      files:
+        - "archive/SpamAssasin.csv"
+
+    - name: "Ling"
+      files:
+        - "archive/Ling.csv"
+
+    - name: "Nazario"
+      files:
+        - "archive/Nazario.csv"
+
+    - name: "Enron"
+      files:
+        - "archive/Enron.csv"
+
+preprocessing:
+  merge_datasets: true
+  clean_data: true
+  remove_duplicates: true
+  handle_missing_values: true
+  detect_labels: true
+  label_encode_categorical_features: true
+
+models:
+  random_forest:
+    architecture: "Random Forest"
+    parameters: "Use the values implemented in the existing training script."
+
+  xgboost:
+    architecture: "XGBoost"
+    parameters: "Use the values implemented in the existing training script."
+
+validation:
+  enabled: true
+
+inference:
+  datasets:
+    - "CEAS 08"
+    - "UCI"
+
+outputs:
+  directory: "saved_models/"
+  artifacts:
+    label_encoder: "label_encoder.pkl"
+    feature_encoders: "feature_encoders.pkl"
+    random_forest: "rf_metadata.pkl"
+    xgboost: "xgb_metadata.pkl"
+    feature_importance: "feature_importance.csv"
+
+artifact_types:
+  model_artifacts:
+    - "rf_metadata.pkl"
+    - "xgb_metadata.pkl"
+  preprocessing_artifacts:
+    - "label_encoder.pkl"
+    - "feature_encoders.pkl"
+  analysis_outputs:
+    - "feature_importance.csv"

@@ -1,0 +1,66 @@
+# PhishFusion - Text Modality
+# Documents the current pipeline configuration described in the project/report.
+# The current Python training/inference scripts do not automatically read YAML;
+# this file should be treated as the source-of-configuration/documentation
+# until the existing code is explicitly wired to load it.
+
+modality: text
+
+data:
+  files:
+    - spam.csv
+    - "Nazario_5 - Copy.csv"
+    - emails.csv
+    - phishtank.csv
+  spamassassin_root: "SpamAssassin/"
+  spamassassin_subdirectories:
+    - easy_ham
+    - easy_ham_2
+    - hard_ham
+    - spam
+    - spam_2
+  huggingface_dataset: "hf://datasets/zefang-liu/phishing-email-dataset/Phishing_Email.csv"
+
+preprocessing:
+  clean_text_and_data: true
+  remove_duplicates: true
+  phishing_class_augmentation: true
+  augmentation:
+    wordnet_synonyms: true
+    character_swapping: true
+  extract_metadata_features_from_text: true
+  scale_metadata_features: true
+
+models:
+  bert_pipeline:
+    architecture: "BERT + CNN + LSTM"
+    learning_rate: 2.0e-5
+    checkpoint: "bert_best.pt"
+
+  distilbert_pipeline:
+    architecture: "DistilBERT + CNN + BiLSTM"
+    learning_rate: 2.0e-5
+    checkpoint: "distil_best.pt"
+
+  metadata_mlp:
+    architecture: "Metadata MLP"
+    checkpoint: "meta_best.pt"
+
+training:
+  batch_size_range: [8, 32]
+
+ensemble:
+  method: "weighted soft voting"
+  saved_separately: false
+  note: "The current ensemble is calculated in memory and is not saved as a separate model file."
+
+inference_datasets:
+  - "Nigerian Fraud"
+  - "Ling"
+  - "Spam"
+
+outputs:
+  checkpoints:
+    - bert_best.pt
+    - distil_best.pt
+    - meta_best.pt

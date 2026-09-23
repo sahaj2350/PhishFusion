@@ -1,0 +1,57 @@
+# PhishFusion - Image Modality
+# Documents the current image pipeline configuration.
+# The existing Image_Script.py remains the authoritative implementation
+# until YAML loading is explicitly added.
+
+modality: image
+
+data:
+  root: "Image Modality/Images/"
+  expected_structure:
+    genuine:
+      - "genuine_site_0/"
+    phishing:
+      - "phishing_site_1/"
+      - "phishing/"
+    legitimate:
+      - "not-phishing/"
+    phishiris:
+      - "phishIRIS_DL_Dataset/train/<brand>/"
+      - "phishIRIS_DL_Dataset/val/<brand>/"
+
+  accepted_extensions:
+    - ".png"
+    - ".jpg"
+    - ".jpeg"
+    - ".bmp"
+    - ".webp"
+
+preprocessing:
+  image_size: [224, 224]
+  normalization: true
+  augmentation:
+    horizontal_flip: true
+    color_jitter: true
+  class_weighted_loss: true
+  early_stopping: true
+
+models:
+  resnet50:
+    architecture: "ResNet50 CNN"
+    learning_rate: 1.0e-4
+    checkpoint: "cnn_best.pt"
+
+  vit:
+    architecture: "Vision Transformer (ViT)"
+    learning_rate: 3.0e-5
+    checkpoint: "vit_best.pt"
+
+ensemble:
+  method: "soft voting"
+  resnet50_weight: 0.5
+  vit_weight: 0.5
+  saved_separately: false
+  note: "The current ensemble is calculated in memory and is not saved as a separate model file."
+
+training:
+  batch_size_range: [8, 32]

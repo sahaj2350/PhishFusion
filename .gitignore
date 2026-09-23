@@ -1,0 +1,80 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter / editor state
+.ipynb_checkpoints/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+
+# PyTorch / deep-learning checkpoints
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+
+# Serialized model / preprocessing artifacts
+*.pkl
+*.joblib
+*.bin
+
+# Hugging Face / trainer checkpoints
+checkpoint-*/
+checkpoints/
+
+# Experiment and training output
+runs/
+wandb/
+tensorboard/
+logs/
+outputs/
+artifacts/
+
+# Raw and locally generated datasets
+data/raw/
+data/processed/
+data/external/
+
+# Large data files
+*.csv
+*.tsv
+*.parquet
+*.jsonl
+*.zip
+*.7z
+*.tar
+*.tar.gz
+
+# Temporary files
+temp/
+tmp/
+tempCodeRunnerFile*
+*.tmp
+
+# Allow selected final result tables
+!results/
+!results/figures/
+!results/tables/
+!results/tables/*.csv

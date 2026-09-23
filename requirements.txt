@@ -1,0 +1,27 @@
+# Data processing
+pandas
+numpy
+
+# Classical machine learning
+scikit-learn
+xgboost
+
+# Deep learning
+torch
+torchvision
+
+# Transformer models
+transformers
+
+# Natural language processing
+nltk
+
+# Image processing
+Pillow
+
+# Results / visualization
+matplotlib
+seaborn
+
+# Configuration
+PyYAML
