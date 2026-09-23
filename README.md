@@ -12,6 +12,12 @@ The project develops and evaluates modality-specific deep-learning and machine-l
 
 > **Project status:** The text, image, and metadata modules were developed and evaluated independently. The final end-to-end fusion of all three modalities was **not implemented in the reported study** because a suitable aligned dataset containing text, image, and metadata for the same instances was not available.
 
+IMPORTANT:
+PhishFusion currently consists of three independently evaluated
+modality-specific pipelines. The unified Text + Image + Metadata
+fusion architecture is proposed future work and is not part of the
+reported implementation.
+
 ---
 
 ## Research Problem
