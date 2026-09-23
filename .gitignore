@@ -53,9 +53,9 @@ outputs/
 artifacts/
 
 # Raw and locally generated datasets
-data/raw/
-data/processed/
-data/external/
+# DATASETS
+data/*
+!data/README.md
 
 # Large data files
 *.csv
