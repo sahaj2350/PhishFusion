@@ -483,6 +483,22 @@ If you use PhishFusion in academic work, please cite the associated research wor
   url    = {https://github.com/sahaj2350/PhishFusion}
 }
 ```
+---
+
+## Publication
+
+### Associated Research Publication
+
+**Sahi, S. K., Kalra, V., & Khurana, S. (2026).** *PhishFusion: A Hybrid Multimodal Framework for Intelligent Phishing Detection.* *DMPedia Advances in Science, Technology and Innovation*, 1–24.
+
+**Chapter citation:**
+
+> Chapter 1: PhishFusion: A Hybrid Multimodal Framework for Intelligent Phishing Detection. (2026). *DMPedia Advances in Science, Technology and Innovation*, *1*(SPE), 1–24.
+
+**Publication:** [Read the published chapter](https://digitalmanuscriptpedia.com/book/index.php/DMP-DASTI/article/view/1)
+
+For additional bibliographic information, see [References](docs/references.md).
+
 
 ---
 
